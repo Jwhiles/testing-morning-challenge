@@ -22,6 +22,9 @@ function getTitleFromDom() {
 
 }
 
+function checkTheElementsOnTheDom() {
+
+}
 
 
 
@@ -53,4 +56,9 @@ test("Has the array been messed with?", function(assert) {
 test("Is the title on the DOM", function(assert) {
   var actual = getTitleFromDom();
   assert.equal(actual, "HELLO WORLD", "Passed!");
+});
+
+test("Are all the elements on the DOM", function(assert) {
+  var actual = checkTheElementsOnTheDom();
+  assert.equal(actual, true, "Passed!");
 });
