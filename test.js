@@ -22,6 +22,7 @@ function getTitleFromDom() {
 
 }
 
+//just the heading, paragraph and image
 function checkTheElementsOnTheDom() {
 
 }
