@@ -1,50 +1,47 @@
 // WRITE YOUR FUNCTIONS HERE
-function example() {
-  return "example";
+function firstTest() {
 }
 
+// REFACTOR: DO NOT USE .LENGTH
+// REFACTOR: DO NOT USE FOR LOOPS
 function checkArrayLength(arr) {
-
 }
 
-//DO NOT use for loops on this one!
+// REFACTOR: DO NOT use for/while loops
+// REFACTOR: DO NOT USE forEach on this one!
 function double(arr){
-
 }
 
-//Make arr [{name:"Robert", age:43}, {name:"Emma", age:25}, {name:"Josh", age: 29}]
-//into: [{"Robert":43}, {"Emma":25}, {"Josh":29}];
+//Make arr [{name:'Robert', age:43}, {name:'Emma', age:25}, {name:'Josh', age: 29}]
+//into: [{'Robert':43}, {'Emma':25}, {'Josh':29}];
 function messWithArray (arr) {
-
 }
 
 function getTitleFromDom() {
-
 }
 
-//just the heading, paragraph and image
+// Just check that the paragraph and image tags are there
 function checkTheElementsOnTheDom() {
-
 }
 
-// Write the test for this function below
+//Now write tests for the following functions:
+
 function divideByTwo(n){
-  var doubled = n/2;
-  return doubled;
+  var halved = n/2;
+  return halved;
 }
 
-// Write the test for this function below
 function isPrime(n){
   // If n is less than 2 or not an integer then by definition cannot be prime.
-   if (n < 2) {return false}
-   if (n != Math.round(n)) {return false}
+   if (n < 2) { return false; }
+   if (n != Math.round(n)) { return false; }
 
    // Now assume that n is prime, we will try to prove that it is not.
    var isPrime = true;
 
    // Now check every whole number from 2 to the square root of n. If any of these divides n exactly, n cannot be prime.
    for (var i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i == 0) {isPrime = false}
+      if (n % i == 0) { isPrime = false; }
    }
 
    // Finally return whether n is prime or not.
@@ -52,52 +49,49 @@ function isPrime(n){
 }
 
 
-// TESTS
-test( "Example test", function(assert) {
-  var actual = example();
-  assert.equal(actual, "example", "Passed!" );
+
+/* ------------- Q-UNIT ------------- */
+/* ------------- TESTS ------------- */
+
+test( 'Check that tests are working, firstTest returns true', function(assert) {
+  var actual = firstTest();
+  assert.ok(actual, 'true === true' );
 });
 
-test("check how many elements in a given array", function(assert){
+test('check how many elements in a given array', function(assert){
   var arr = [1, 2, 3, 4, 5];
   var actual = checkArrayLength(arr);
-  assert.equal(actual, 5, "Passed!");
+  var expected = 5
+  assert.equal(actual, expected, 'checkArrayLength returns correct value!');
 });
 
-test("Is the array of numbers doubled", function(assert) {
+test('Is the array of numbers doubled', function(assert) {
   var arr = [1, 2, 4];
   var actual = double(arr);
-  assert.deepEqual(actual, [2, 4, 8], "Passed!");
+  var expected = [2, 4, 8];
+  assert.deepEqual(actual, expected, 'Numbers have been doubled!');
 });
 
-test("Has the array been messed with?", function(assert) {
-  var arr = [{name:"Robert", age:43}, {name:"Emma", age:25}, {name:"Josh", age: 29}];
+test('Has the array been messed with?', function(assert) {
+  var arr = [{name:'Robert', age:43}, {name:'Emma', age:25}, {name:'Josh', age: 29}];
   var actual = messWithArray(arr);
-  var result = [{"Robert":43}, {"Emma":25}, {"Josh":29}];
-  assert.deepEqual(actual, result, "Passed!");
+  var expected = [{'Robert':43}, {'Emma':25}, {'Josh':29}];
+  assert.deepEqual(actual, expected, 'Passed!');
 });
 
-test("Is the title on the DOM", function(assert) {
+test('Is h1 title on DOM with "HELLO WORLD"', function(assert) {
   var actual = getTitleFromDom();
-  assert.equal(actual, "HELLO WORLD", "Passed!");
+  var expected = 'HELLO WORLD'
+  assert.equal(actual, expected, 'Passed!');
 });
 
-test("Are all the elements on the DOM", function(assert) {
+test('Are all the elements on the DOM', function(assert) {
   var actual = checkTheElementsOnTheDom();
-  assert.equal(actual, true, "Passed!");
+  assert.ok(actual, 'Passed!');
 });
 
-test("Are all the elements on the DOM", function(assert) {
-  var actual = checkTheElementsOnTheDom();
-  assert.equal(actual, true, "Passed!");
+test('test the function divideByTwo', function(assert) {
 });
 
-test("test the fucntion divideByTwo", function(assert) {
-  // write the test here
-
-});
-
-test("test the fucntion isPrime", function(assert) {
-  // write the test here
-  
+test('test the fucntion isPrime', function(assert) {
 });
