@@ -5,6 +5,7 @@ Your morning challenge is to make the tests pass, and then to write a couple tes
 The assertions that are being used in the test can be found here: http://api.qunitjs.com/category/assert/
 
 Instructions:
+
 1. Clone this repo
 
 2. Take a quick look at test.html, notice the script tags
