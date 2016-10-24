@@ -24,13 +24,7 @@ function double(arr){
 //Make arr [{name:'Robert', age:43}, {name:'Emma', age:25}, {name:'Josh', age: 29}]
 //into: [{'Robert':43}, {'Emma':25}, {'Josh':29}];
 function messWithArray (arr) {
-    return arr.map(function (val) {
-      var name = val['name'];
-      var age = val['age'];
-      var obj = {};
-      obj[name] = age;
-      return obj;
-  })
+  return arr.map(a=>({[a.name]: a.age}));
 }
 
 function getTitleFromDom() {
