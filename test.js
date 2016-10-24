@@ -1,3 +1,6 @@
+
+document.getElementById('paragraph').innerText = 'Giraffes are cool'
+
 // WRITE YOUR FUNCTIONS HERE
 function firstTest() {
   return true;
@@ -6,11 +9,9 @@ function firstTest() {
 // REFACTOR: DO NOT USE .LENGTH
 // REFACTOR: DO NOT USE FOR LOOPS
 function checkArrayLength(arr) {
-  var values = 0;
-    arr.forEach(function() {
-      values +=1;
-    });
-    return values;
+  return arr.reduce(function(a) {
+    return a + 1
+  }, 0);
 }
 
 // REFACTOR: DO NOT use for/while loops
@@ -28,7 +29,7 @@ function messWithArray (arr) {
 }
 
 function getTitleFromDom() {
-  var title = document.getElementById('title').innerHTML = 'HELLO WORLD';
+  var title = document.getElementById('title').textContent = 'HELLO WORLD';
   return title
 }
 
