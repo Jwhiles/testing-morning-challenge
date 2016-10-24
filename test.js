@@ -1,27 +1,46 @@
 // WRITE YOUR FUNCTIONS HERE
 function firstTest() {
+  return true;
 }
 
 // REFACTOR: DO NOT USE .LENGTH
 // REFACTOR: DO NOT USE FOR LOOPS
 function checkArrayLength(arr) {
+  var values = 0;
+    arr.forEach(function() {
+      values +=1;
+    });
+    return values;
 }
 
 // REFACTOR: DO NOT use for/while loops
 // REFACTOR: DO NOT USE forEach on this one!
 function double(arr){
+  return arr.map(function (val) {
+    return val * 2;
+  });
 }
 
 //Make arr [{name:'Robert', age:43}, {name:'Emma', age:25}, {name:'Josh', age: 29}]
 //into: [{'Robert':43}, {'Emma':25}, {'Josh':29}];
 function messWithArray (arr) {
+    return arr.map(function (val) {
+      var name = val['name'];
+      var age = val['age'];
+      var obj = {};
+      obj[name] = age;
+      return obj;
+  })
 }
 
 function getTitleFromDom() {
+  var title = document.getElementById('title').innerHTML = 'HELLO WORLD';
+  return title
 }
 
 // Just check that the paragraph and image tags are there
 function checkTheElementsOnTheDom() {
+  return document.getElementsByTagName('p', 'img');
 }
 
 //Now write tests for the following functions:
@@ -91,7 +110,13 @@ test('Are all the elements on the DOM', function(assert) {
 });
 
 test('test the function divideByTwo', function(assert) {
+  var actual = divideByTwo(4);
+  var expected = 2
+  assert.equal(actual, expected, 'Passed!');
 });
 
 test('test the fucntion isPrime', function(assert) {
+  var actual = isPrime(7);
+  var expected = true;
+  assert.equal(actual, expected, 'Passed!');
 });
